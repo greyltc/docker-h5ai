@@ -8,6 +8,7 @@ RUN sudo pacman -Suy --noconfirm --needed ghostscript openexr openjpeg2 libwmf l
 
 # install some owncloud optional deps
 RUN yaourt -Suya --noconfirm --needed h5ai
+RUN sudo mv /srv/http/h5ai /srv/http/_h5ai
 
 # remove info.php
 #RUN sudo rm /srv/http/info.php
