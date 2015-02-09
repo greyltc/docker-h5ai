@@ -15,7 +15,7 @@ ADD .htaccess /srv/http/
 RUN sudo sed -i '/<Directory "\/srv\/http">/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 
 # remove info.php
-#RUN sudo rm /srv/http/info.php
+RUN sudo rm /srv/http/info.php
 
 # start apache and mysql
 CMD cd '/usr'; sudo /usr/bin/mysqld_safe --datadir='/var/lib/mysql'& sudo apachectl -DFOREGROUND
