@@ -6,9 +6,10 @@ RUN sudo pacman -Suy --noconfirm --needed zip
 #RUN sudo pacman -Suy --noconfirm --needed ffmpeg
 RUN sudo pacman -Suy --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
 
-# install some owncloud optional deps
+# install h5ai
 RUN yaourt -Suya --noconfirm --needed h5ai
 RUN sudo mv /srv/http/h5ai /srv/http/_h5ai
+ADD .htaccess /srv/http/
 
 # remove info.php
 #RUN sudo rm /srv/http/info.php
