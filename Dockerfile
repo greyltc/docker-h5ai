@@ -3,7 +3,7 @@ MAINTAINER l3iggs <l3iggs@live.com>
 
 # h5ai deps
 RUN sudo pacman -Suy --noconfirm --needed zip
-RUN sudo pacman -Suy --noconfirm --needed avconv
+#RUN sudo pacman -Suy --noconfirm --needed ffmpeg
 RUN sudo pacman -Suy --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
 
 # install some owncloud optional deps
