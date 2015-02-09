@@ -3,6 +3,7 @@ MAINTAINER l3iggs <l3iggs@live.com>
 
 # h5ai deps
 RUN sudo pacman -Suy --noconfirm --needed zip
+RUN sudo pacman -Suy --noconfirm --needed imagemagick
 
 # install some owncloud optional deps
 RUN yaourt -Suya --noconfirm --needed h5ai
