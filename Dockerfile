@@ -9,7 +9,10 @@ RUN sudo pacman -Suy --noconfirm --needed ghostscript openexr openjpeg2 libwmf l
 # install h5ai
 RUN yaourt -Suya --noconfirm --needed h5ai
 RUN sudo mv /srv/http/h5ai /srv/http/_h5ai
+
+# add and enable .htaccess
 ADD .htaccess /srv/http/
+RUN sudo sed -i '/<Directory "\/srv\/http">/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 
 # remove info.php
 #RUN sudo rm /srv/http/info.php
