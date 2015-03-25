@@ -15,7 +15,7 @@ ADD .htaccess /srv/http/
 RUN sudo sed -i '/<Directory "\/srv\/http">/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 
 # treat .qc files as text files
-RUN sudo  sed -i 's|["*.text", "*.txt"],|["*.text", "*.txt", "*.qc"],|g' /srv/http/_h5ai/conf/types.json
+RUN sudo  sed -i 's:\["\*\.text", "\*\.txt"\],:\["\*\.text", "\*\.txt", "\*\.qc"\],:g' /srv/http/_h5ai/conf/types.json
 
 # remove info.php
 RUN sudo rm /srv/http/info.php
