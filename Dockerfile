@@ -1,13 +1,13 @@
-FROM l3iggs/lamp
+FROM l3iggs/lamp-aur
 MAINTAINER l3iggs <l3iggs@live.com>
 
 # h5ai deps
-RUN sudo pacman -Suy --noconfirm --needed zip
-#RUN sudo pacman -Suy --noconfirm --needed ffmpeg
-RUN sudo pacman -Suy --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
+RUN sudo pacman -S --noconfirm --needed zip
+#RUN sudo pacman -S --noconfirm --needed ffmpeg
+RUN sudo pacman -S --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
 
 # install h5ai
-RUN yaourt -Suya --noconfirm --needed h5ai
+RUN yaourt -S --noconfirm --needed h5ai
 RUN sudo mv /srv/http/h5ai /srv/http/_h5ai
 
 # add and enable .htaccess
