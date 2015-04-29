@@ -3,7 +3,7 @@ MAINTAINER l3iggs <l3iggs@live.com>
 
 # h5ai deps
 RUN sudo pacman -S --noconfirm --needed zip
-#RUN sudo pacman -S --noconfirm --needed ffmpeg
+RUN sudo pacman -S --noconfirm --needed ffmpeg
 RUN sudo pacman -S --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
 
 # install h5ai
