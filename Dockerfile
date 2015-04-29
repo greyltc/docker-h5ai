@@ -8,7 +8,7 @@ RUN sudo pacman -S --noconfirm --needed ghostscript openexr openjpeg2 libwmf lib
 
 # install h5ai
 RUN yaourt -S --noconfirm --needed h5ai
-RUN sudo mv /srv/http/h5ai /srv/http/_h5ai
+RUN sudo mv /usr/share/webapps/h5ai /srv/http/_h5ai
 
 # add and enable .htaccess
 ADD .htaccess /srv/http/
