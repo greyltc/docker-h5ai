@@ -4,7 +4,12 @@ MAINTAINER l3iggs <l3iggs@live.com>
 # h5ai deps
 RUN sudo pacman -S --noconfirm --needed zip
 RUN sudo pacman -S --noconfirm --needed ffmpeg
-RUN sudo pacman -S --noconfirm --needed ghostscript openexr openjpeg2 libwmf libwebp imagemagick
+RUN sudo pacman -S --noconfirm --needed ghostscript
+RUN sudo pacman -S --noconfirm --needed openexr
+RUN sudo pacman -S --noconfirm --needed openjpeg2
+RUN sudo pacman -S --noconfirm --needed libwmf
+RUN sudo pacman -S --noconfirm --needed libwebp
+RUN sudo pacman -S --noconfirm --needed imagemagick
 
 # install h5ai
 RUN yaourt -S --noconfirm --needed h5ai
@@ -20,5 +25,7 @@ RUN sudo  sed -i 's:\["\*\.text", "\*\.txt"\],:\["\*\.text", "\*\.txt", "\*\.qc"
 # remove info.php
 RUN sudo rm /srv/http/info.php
 
-# start apache and mysql
-CMD cd '/usr'; sudo /usr/bin/mysqld_safe --datadir='/var/lib/mysql'& sudo apachectl -DFOREGROUND
+# start servers
+ENV START_APACHE true
+ENV START_MYSQL false
+CMD ["/root/startServers.sh"]
