@@ -28,4 +28,4 @@ RUN sudo rm /srv/http/info.php
 # start servers
 ENV START_APACHE true
 ENV START_MYSQL false
-CMD ["/root/startServers.sh"]
+CMD ["sudo","-E","/root/startServers.sh"]
