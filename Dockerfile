@@ -1,6 +1,9 @@
 FROM l3iggs/lamp-aur
 MAINTAINER l3iggs <l3iggs@live.com>
 
+# remove info.php
+RUN sudo rm /srv/http/info.php
+
 # h5ai deps
 RUN sudo pacman -S --noconfirm --needed zip
 RUN sudo pacman -S --noconfirm --needed ffmpeg
@@ -22,10 +25,10 @@ RUN sudo sed -i '/<Directory "\/srv\/http">/,/<\/Directory>/ s/AllowOverride Non
 # treat .qc files as text files
 RUN sudo  sed -i 's:\["\*\.text", "\*\.txt"\],:\["\*\.text", "\*\.txt", "\*\.qc"\],:g' /srv/http/_h5ai/conf/types.json
 
-# remove info.php
-RUN sudo rm /srv/http/info.php
-
-# start servers
+# set some default variables for the startup script
+ENV REGENERATE_SSL_CERT false
 ENV START_APACHE true
 ENV START_MYSQL false
+
+# start servers
 CMD ["sudo","-E","/root/startServers.sh"]
