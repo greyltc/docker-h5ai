@@ -30,5 +30,5 @@ ENV REGENERATE_SSL_CERT false
 ENV START_APACHE true
 ENV START_MYSQL false
 
-# start servers
-CMD ["sudo","-E","/root/startServers.sh"]
+# start the servers, then wait forever
+CMD start-servers; sleep infinity
