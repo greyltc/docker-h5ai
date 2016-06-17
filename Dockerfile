@@ -4,6 +4,9 @@ MAINTAINER Grey Christoforo <grey@christoforo.net>
 # remove info.php
 RUN rm /srv/http/info.php
 
+# uncomment this to update the container's mirrorlist
+RUN get-new-mirrors
+
 # h5ai deps
 RUN pacman -S --noconfirm --needed zip
 RUN pacman -S --noconfirm --needed ffmpeg
