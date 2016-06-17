@@ -1,5 +1,5 @@
-FROM l3iggs/lamp-aur
-MAINTAINER l3iggs <l3iggs@live.com>
+FROM greyltc/lamp-aur
+MAINTAINER Grey Christoforo <grey@christoforo.net>
 
 # remove info.php
 RUN sudo rm /srv/http/info.php
