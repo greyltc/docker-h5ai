@@ -15,7 +15,7 @@ RUN sudo pacman -S --noconfirm --needed libwebp
 RUN sudo pacman -S --noconfirm --needed imagemagick
 
 # install h5ai
-RUN yaourt -S --noconfirm --needed h5ai
+RUN su docker -c 'pacaur -m --noprogressbar --noedit --noconfirm h5ai'
 RUN sudo mv /usr/share/webapps/h5ai /srv/http/_h5ai
 
 # add and enable .htaccess
