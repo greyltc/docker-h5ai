@@ -12,5 +12,4 @@ pacman -S --noprogressbar --noconfirm --needed imagemagick
 
 # install h5ai
 su docker -c 'pacaur -S --noprogressbar --noedit --noconfirm h5ai'
-mv /usr/share/webapps/h5ai /srv/http/_h5ai
-
+cp -a /usr/share/webapps/h5ai /srv/http/_h5ai
