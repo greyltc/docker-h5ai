@@ -22,6 +22,8 @@ RUN setup-h5ai
 ENV REGENERATE_SSL_CERT false
 ENV START_APACHE true
 ENV START_MYSQL false
+EXPOSE 80
+ENV APACHE_ENABLE_PORT_80 true
 
 # start the servers, then wait forever
 CMD start-servers; sleep infinity
