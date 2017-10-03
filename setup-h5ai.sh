@@ -20,7 +20,7 @@ cp /usr/share/webapps/h5ai/.bak.htaccess /etc/httpd/conf/extra/h5ai.conf
 sed  's/^/  /' -i /etc/httpd/conf/extra/h5ai.conf
 
 sed -i '1s;^;<Directory /usr/share/webapps/h5ai/>\\\n;' /etc/httpd/conf/extra/h5ai.conf
-sed -i '1s;^;Alias /h5ai "/usr/share/webapps/h5ai";' /etc/httpd/conf/extra/h5ai.conf
+sed -i '1s;^;Alias /h5ai "/usr/share/webapps/h5ai"\\\n;' /etc/httpd/conf/extra/h5ai.conf
 sed -i '$a </Directory>' /etc/httpd/conf/extra/h5ai.conf
 
 sed -i '$a Include conf/extra/h5ai.conf' /etc/httpd/conf/httpd.conf
