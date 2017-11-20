@@ -19,7 +19,7 @@ chown http /srv/http/_h5ai/private/cache
 chown http /srv/http/_h5ai/public/cache
 
 # allow symlink following in the web dir
-sed -i '1s/^/Options +FollowSymLinks /' /srv/http/_h5ai/.htaccess
+sed -i '1s/^/Options +FollowSymLinks \n/' /srv/http/_h5ai/.htaccess
 
 # use h5ai for index
 sed -i 's,DirectoryIndex index.html,DirectoryIndex index.html /_h5ai/public/index.php,g' /etc/httpd/conf/httpd.conf
